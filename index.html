@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ricky's golf card</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script src="scoring-service.js" defer></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    <div class="modal">
+        <div class="panel">
+            <div id="choosing-items">
+                <div>
+                    <label for="course-select"> Pick your course: </label>
+                    <select id="course-select">
+                        <option value="18300"> Fox Hollow</option>
+                        <option value="11819">Thanksgiving Point</option>
+                        <option value="19002">Spanish Oaks</option>
+                    </select>
+                </div>
+                <div>
+                    <span> Number of players: </span>
+                    <input type="number" placeholder="number of players" class="numberPlayers">
+                </div>
+
+            </div>
+            <button id="go-button" onclick="addPlayers()"> Continue</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="hole-container">
+            <div class="player-container"><p></p></div>
+        </div>
+        <div class="score-container">
+            <div class="player-container">Professional</div>
+        </div>
+        <div class="score-container">
+            <div class="player-container">Championship</div>
+        </div>
+        <div class="score-container">
+            <div class="player-container">middle</div>
+        </div>
+        <div class="score-container">
+            <div class="player-container">senior</div>
+        </div>
+        <div class="score-container">
+            <div class="player-container">handicap</div>
+        </div>
+        <div class="score-container">
+            <div class="player-container"></div>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
