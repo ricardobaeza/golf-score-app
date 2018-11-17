@@ -20,6 +20,7 @@ img {
     justify-content: space-between;
     background-color: rgb(36,36,36);
     height: 270px;
+    width: 1440px;
 }
 
 .banner-left {
@@ -172,3 +173,5 @@ img {
     display: flex;
     width: 720px;
 }
+
+
