@@ -13,6 +13,7 @@
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
@@ -21,7 +22,7 @@
             <div id="choosing-items">
                 <div>
                     <label for="course-select"> Pick your course: </label>
-                    <select id="course-select">
+                    <select id="course-select" onchange="teeCourseSelect()">
                         <option value="18300"> Fox Hollow</option>
                         <option value="11819">Thanksgiving Point</option>
                         <option value="19002">Spanish Oaks</option>
@@ -31,35 +32,46 @@
                     <span> Number of players: </span>
                     <input type="number" placeholder="number of players" class="numberPlayers">
                 </div>
+                <div>
+                    <label for="tee-type">pick you're tee type</label>
+                    <select id="tee-type">
+
+                    </select>
+                </div>
 
             </div>
             <button id="go-button" onclick="addPlayers()"> Continue</button>
         </div>
     </div>
+    <h1 id="blank"></h1>
     <div class="content">
-        <div class="hole-container">
-            <div class="player-container"><p></p></div>
-        </div>
-        <div class="score-container">
-            <div class="player-container">Professional</div>
-        </div>
-        <div class="score-container">
-            <div class="player-container">Championship</div>
-        </div>
-        <div class="score-container">
-            <div class="player-container">middle</div>
-        </div>
-        <div class="score-container">
-            <div class="player-container">senior</div>
-        </div>
-        <div class="score-container">
-            <div class="player-container">handicap</div>
-        </div>
-        <div class="score-container">
-            <div class="player-container"></div>
-        </div>
+        <div class="in-score">
+            <div class="hole-container">
+                <div class="player-container"><p></p></div>
+            </div>
+            <div class="yards-container">
+                <div class="player-container">yards</div>
+            </div>
+            <div class="info-container">
+                <div class="player-container">par</div>
+            </div>
 
+
+
+            <div class="info-container">
+                <div class="player-container">handicap</div>
+            </div>
+        </div>
+        <div class="out-score">
+            <div class="OS-hole-container"></div>
+            <div class="info-container"></div>
+            <div class="info-container"></div>
+            <div class="info-container"></div>
+        </div>
     </div>
+
+
+
 
 
 

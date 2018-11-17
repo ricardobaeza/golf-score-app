@@ -25,8 +25,9 @@ p {
     height: 100%;
 }
 
-.content {
-    background: #fffa90;
+.in-score {
+    width: 768px;
+    background-color: red;
 }
 
 .panel {
@@ -62,21 +63,63 @@ p {
 
 .hole {
     border: 1px solid black;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #00a534;
+}
+
+.hole-container {
+    display: flex;
+    width: 720px;
+}
+
+.player-container {
+    border: 1px solid black;
+    width: 110px;
+    justify-content: center;
+}
+.score-container {
+    display: flex;
+    width: 720px;
+}
+
+.info-container {
+    display: flex;
+    width: 720px;
+}
+
+.yards-container {
+    display: flex;
+    width: 720px;
+}
+
+.info-space {
+    border: 1px solid black;
+    width: 52px;
+    background-color: white;
+}
+.input-hole {
+    border: 1px solid black;
     width: 50px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.hole-container {
+.content {
     display: flex;
+    background-color: #00a534;
 }
 
-.player-container {
-    border: 1px solid black;
-    width: 10%;
-    justify-content: center;
+.out-score {
+    width: 768px;
+    background-color: #7895BB;
 }
-.score-container {
+
+.OS-hole-container {
     display: flex;
+    width: auto;
 }
