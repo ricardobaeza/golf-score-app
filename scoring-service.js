@@ -1,8 +1,12 @@
 
+let p1Arr = [];
+let p2Arr = [];
+let p3Arr = [];
+let p4Arr = [];
 
 // this is the add players function which when "continue" is pressed it initiates it
 function addPlayers() {
-    let numbPlayers = $(".numberPlayers").val();
+    let numbPlayers = $("#numberPlayers").val();
     if (numbPlayers == '') {
         alert('enter players please')
     }else {
@@ -10,7 +14,7 @@ function addPlayers() {
 
         // add players
         for (let i = 1; i <= numbPlayers; i++) {
-            $(".in-score").append("<div class='score-container'><div class='player-container'>player" + i + "</div></div>");
+            $(".in-score").append(`<div class='score-container ' id="player${[i]}"><div class='player-container'>player${[i]}</div></div>`);
             $('.out-score').append("<div class='os-score-container'></div>")
         // adds the hole count at the top
         }
@@ -21,16 +25,25 @@ function addPlayers() {
 
         $('.hole-container').append('<div class="hole">Out</div>');
 
-        // adds the yardage, the par and the handicap to the golf card
 
 
         // this will append to the players
-        for (let i = 0; i <= 9; i++) {
-            $('.score-container').append('<input class="input-hole" type="text">')
+        for (let i = 0; i <= 8; i++) {
+            $('#player1').append('<input class="input-hole player1-input" type="text" oninput="calculateTotal(1,this.value)">')
+            $('#player2').append('<input class="input-hole player2-input" type="text" oninput="calculateTotal(2,this.value)">')
+            $('#player3').append('<input class="input-hole player3-input" type="text" oninput="calculateTotal(3,this.value)">')
+            $('#player4').append('<input class="input-hole player4-input" type="text" oninput="calculateTotal(4,this.value)">')
 
         }
+
+        $('.score-container').append('<div class="hole totalScore"></div>');
+
+
+
+
+
         for (let i = 10; i <= 20; i++) {
-            $('.os-score-container').append('<input class="input-hole" type="text">')
+            $('.os-score-container').append('<input class="input-hole" type="text" name="' + i  +'">')
         }
 
 
@@ -148,6 +161,36 @@ function getCourseInfo(value) {
 }
 
 
+
+function calculateTotal(id, value) {
+    let total = 0;
+    switch (id) {
+        case 1:
+            p1Arr.push(Number(value));
+
+            break;
+
+        case 2:
+            p2Arr.push(Number(value));
+            break;
+
+        case 3:
+            p3Arr.push(Number(value));
+            break;
+
+        case 4:
+            p4Arr.push(Number(value));
+
+        default
+    }
+    console.log(playerArr1);
+    for (let i = 0; i < arr.length; i++) {
+        total += playerArr1[i];
+        $('.totalScore').text(total);
+    }
+
+
+}
 
 
 
