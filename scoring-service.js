@@ -86,24 +86,50 @@ function getCourseInfo(value) {
         if (this.readyState == 4 && this.status == 200) {
             mycourse = JSON.parse(this.responseText);
             document.getElementById('blank').innerHTML = mycourse.data.name;
-            console.log(mycourse);
-            // adding the yards to the golf card depending on the type of tee
+            document.getElementById('banner-img').src = mycourse.data.thumbnail;
+            document.getElementById('address1').innerHTML = mycourse.data.addr1;
+            document.getElementById('city').innerHTML = mycourse.data.city;
+            document.getElementById('state').innerHTML = mycourse.data.stateOrProvince;
 
+
+            console.log(mycourse);
+
+            // adding the yards to the golf card depending on the type of tee
+            let yardTotal = 0;
+            let parTotal = 0;
             for (let i = 0; i <= 8; i++) {
-                $('.yards-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards + '</div>')
+                $('.yards-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards + '</div>');
+                yardTotal += mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards
             }
+
+            $('.yards-container').append('<div class="info-space">' + yardTotal + '</div>');
+            let osYardTotal = yardTotal;
 
             for (let i = 9; i <= 17; i++) {
-                $('.os-yards-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards + '</div>')
+                $('.os-yards-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards + '</div>');
+                osYardTotal += mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].yards
             }
+
+            $('.os-yards-container').append('<div class="info-space">' + osYardTotal + '</div>');
+
 
             for (let i = 0; i <= 8; i++) {
                 $('.par-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].par + '</div>')
+                parTotal += mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].par;
+
             }
+            $('.par-container').append('<div class="info-space">' + parTotal + '</div>');
+            let osParTotal = parTotal;
+
 
             for (let i = 9; i <= 17; i++) {
-                $('.os-par-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].par + '</div>')
+                $('.os-par-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].par + '</div>');
+                osParTotal += mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].par
+
             }
+            $('.os-par-container').append('<div class="info-space">' + osParTotal + '</div>');
+
+
 
             for (let i = 0; i <= 8; i++) {
                 $('.hcp-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].hcp + '</div>')
@@ -111,6 +137,9 @@ function getCourseInfo(value) {
             for (let i = 9; i <= 17; i++) {
                 $('.os-hcp-container').append('<div class= info-space>' + mycourse.data.holes[i].teeBoxes[document.getElementById('tee-type').value].hcp + '</div>')
             }
+
+
+
 
         }
     };

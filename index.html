@@ -15,6 +15,7 @@
             crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
 </head>
 <body>
     <div class="modal">
@@ -23,6 +24,7 @@
                 <div>
                     <label for="course-select"> Pick your course: </label>
                     <select id="course-select" onchange="teeCourseSelect()">
+                        <option></option>
                         <option value="18300"> Fox Hollow</option>
                         <option value="11819">Thanksgiving Point</option>
                         <option value="19002">Spanish Oaks</option>
@@ -43,7 +45,20 @@
             <button id="go-button" onclick="addPlayers()"> Continue</button>
         </div>
     </div>
-    <h1 id="blank"></h1>
+    <div class="banner">
+        <div class="banner-left">
+            <h1 id="blank"></h1>
+            <div id="banner-info-styles">
+                <p id="address1"></p>
+                <p id="city"></p>
+                <span id="state"></span>
+            </div>
+
+        </div>
+        <div class="banner-right">
+            <img src="" id="banner-img">
+        </div>
+    </div>
     <div class="content">
         <div class="in-score">
             <div class="hole-container">
