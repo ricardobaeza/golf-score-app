@@ -84,6 +84,10 @@ p {
     display: flex;
     width: 720px;
 }
+.os-score-container {
+    display: flex;
+    width: 720px;
+}
 
 .info-container {
     display: flex;
@@ -94,8 +98,29 @@ p {
     display: flex;
     width: 720px;
 }
+.par-container {
+    display: flex;
+    width: 720px;
+}
+.os-par-container {
+    display: flex;
+    width: 720px;
+}
+
+.hcp-container {
+    display: flex;
+    width: 720px;
+}
+
+.os-hcp-container {
+    display: flex;
+    width: 720px;
+}
 
 .info-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
     width: 52px;
     background-color: white;
@@ -122,4 +147,8 @@ p {
 .OS-hole-container {
     display: flex;
     width: auto;
+}
+.os-yards-container {
+    display: flex;
+    width: 720px;
 }
