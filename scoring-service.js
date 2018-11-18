@@ -4,6 +4,12 @@ let p2Arr = [];
 let p3Arr = [];
 let p4Arr = [];
 
+
+let osP1Arr = [];
+let osP2Arr = [];
+let osP3Arr = [];
+let osP4Arr = [];
+
 // this is the add players function which when "continue" is pressed it initiates it
 function addPlayers() {
     let numbPlayers = $("#numberPlayers").val();
@@ -14,8 +20,8 @@ function addPlayers() {
 
         // add players
         for (let i = 1; i <= numbPlayers; i++) {
-            $(".in-score").append(`<div class='score-container ' id="player${[i]}"><div class='player-container'>player${[i]}</div></div>`);
-            $('.out-score').append("<div class='os-score-container'></div>")
+            $(".in-score").append(`<div class='score-container player${[i]}'><div class='player-container'>player${[i]}</div></div>`);
+            $('.out-score').append(`<div class='os-score-container os-player${[i]}'></div>`)
         // adds the hole count at the top
         }
         for (let i = 1; i <= 9; i++) {
@@ -29,22 +35,34 @@ function addPlayers() {
 
         // this will append to the players
         for (let i = 0; i <= 8; i++) {
-            $('#player1').append('<input class="input-hole player1-input" type="text" oninput="calculateTotal(1,this.value)">')
-            $('#player2').append('<input class="input-hole player2-input" type="text" oninput="calculateTotal(2,this.value)">')
-            $('#player3').append('<input class="input-hole player3-input" type="text" oninput="calculateTotal(3,this.value)">')
-            $('#player4').append('<input class="input-hole player4-input" type="text" oninput="calculateTotal(4,this.value)">')
+            $('.player1').append('<input class="input-hole" type="text" oninput="calculateTotal(1,this.value)">');
+            $('.player2').append('<input class="input-hole" type="text" oninput="calculateTotal(2,this.value)">');
+            $('.player3').append('<input class="input-hole" type="text" oninput="calculateTotal(3,this.value)">');
+            $('.player4').append('<input class="input-hole" type="text" oninput="calculateTotal(4,this.value)">')
 
         }
 
-        $('.score-container').append('<div class="hole totalScore"></div>');
+        $('.player1').append('<div class="hole player1-Ts"></div>');
+        $('.player2').append('<div class="hole player2-Ts"></div>');
+        $('.player3').append('<div class="hole player3-Ts"></div>');
+        $('.player4').append('<div class="hole player4-Ts"></div>');
 
 
 
 
 
-        for (let i = 10; i <= 20; i++) {
-            $('.os-score-container').append('<input class="input-hole" type="text" name="' + i  +'">')
+        for (let i = 10; i <= 18; i++) {
+            $('.os-player1').append('<input class="input-hole " type="text" oninput="calculateTotal(5,this.value)">');
+            $('.os-player2').append('<input class="input-hole" type="text" oninput="calculateTotal(6,this.value)">');
+            $('.os-player3').append('<input class="input-hole" type="text" oninput="calculateTotal(7,this.value)">');
+            $('.os-player4').append('<input class="input-hole" type="text" oninput="calculateTotal(8,this.value)">')
+
+
         }
+        $('.os-player1').append('<div class="hole player1-os"></div>');
+        $('.os-player2').append('<div class="hole player2-os"></div>');
+        $('.os-player3').append('<div class="hole player3-os"></div>');
+        $('.os-player4').append('<div class="hole player4-os"></div>');
 
 
 
@@ -163,34 +181,82 @@ function getCourseInfo(value) {
 
 
 function calculateTotal(id, value) {
-    let total = 0;
+    let outscore = 0;
+    let inscore = 0;
     switch (id) {
         case 1:
             p1Arr.push(Number(value));
-
+            for (let i = 0; i < p1Arr.length; i++) {
+                outscore += p1Arr[i];
+                $('.player1-Ts').text(outscore);
+            }
             break;
 
         case 2:
             p2Arr.push(Number(value));
+            for (let i = 0; i < p2Arr.length; i++) {
+                outscore += p2Arr[i];
+                $('.player2-Ts').text(outscore);
+            }
             break;
 
         case 3:
             p3Arr.push(Number(value));
+            for (let i = 0; i < p3Arr.length; i++) {
+                outscore += p3Arr[i];
+                $('.player3-Ts').text(outscore);
+            }
             break;
 
         case 4:
             p4Arr.push(Number(value));
-
-        default
+            for (let i = 0; i < p4Arr.length; i++) {
+                outscore += p4Arr[i];
+                $('.player4-Ts').text(outscore);
+            }
+            break;
+        case 5:
+            osP1Arr.push(Number(value));
+            for (let i = 0; i < osP1Arr.length; i++) {
+                inscore += osP1Arr[i];
+                $('.player1-os').text(inscore);
+            }
+            break;
+        case 6:
+            osP2Arr.push(Number(value));
+            for (let i = 0; i < osP2Arr.length; i++) {
+                inscore += osP2Arr[i];
+                $('.player2-os').text(inscore);
+            }
+            break;
+        case 7:
+            osP3Arr.push(Number(value));
+            for (let i = 0; i < osP3Arr.length; i++) {
+                inscore += osP3Arr[i];
+                $('.player3-os').text(inscore);
+            }
+            break;
+        case 8:
+            osP4Arr.push(Number(value));
+            for (let i = 0; i < osP4Arr.length; i++) {
+                inscore += osP4Arr[i];
+                $('.player4-os').text(inscore);
+            }
+            break;
+        default:
+            console.log('how did you even do this?');
+            break;
     }
-    console.log(playerArr1);
-    for (let i = 0; i < arr.length; i++) {
-        total += playerArr1[i];
-        $('.totalScore').text(total);
-    }
+    // console.log(playerArr1);
+    //     // for (let i = 0; i < arr.length; i++) {
+    //     //     total += playerArr1[i];
+    //     //     $('.totalScore').text(total);
+    //     // }
 
 
 }
+
+
 
 
 
