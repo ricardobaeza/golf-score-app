@@ -1,4 +1,7 @@
 
+
+
+
 let p1Arr = [];
 let p2Arr = [];
 let p3Arr = [];
@@ -119,6 +122,142 @@ function teeCourseSelect() {
 }
 
 
+function calculateTotal(id, value) {
+    let outscore = 0;
+    let inscore = 0;
+    let totalScore = 0;
+    if (isNaN(Number(value))) {
+        alert('please enter a number');
+
+    }
+    else  {
+        switch (id) {
+            case 1:
+                p1Arr.push(Number(value));
+                p1totalAr.push(Number(value));
+                for (let i = 0; i < p1Arr.length; i++) {
+                    outscore += p1Arr[i];
+                    $('.player1-Ts').text(outscore);
+
+                }
+                for (let i = 0; i < p1totalAr.length; i++) {
+                    totalScore += p1totalAr[i];
+                    $('.player1-FS').text(totalScore);
+
+                }
+                break;
+
+            case 2:
+                p2Arr.push(Number(value));
+                p2totalAr.push(Number(value));
+                for (let i = 0; i < p2Arr.length; i++) {
+                    outscore += p2Arr[i];
+                    $('.player2-Ts').text(outscore);
+                }
+                for (let i = 0; i < p2totalAr.length; i++) {
+                    totalScore += p2totalAr[i];
+                    $('.player2-FS').text(totalScore);
+                }
+                break;
+
+            case 3:
+                p3Arr.push(Number(value));
+                p3totalAr.push(Number(value));
+
+                for (let i = 0; i < p3Arr.length; i++) {
+                    outscore += p3Arr[i];
+                    $('.player3-Ts').text(outscore);
+                }
+                for (let i = 0; i < p3totalAr.length; i++) {
+                    totalScore += p3totalAr[i];
+                    $('.player3-FS').text(totalScore);
+
+                }
+                break;
+
+            case 4:
+                p4Arr.push(Number(value));
+                p4totalAr.push(Number(value));
+
+                for (let i = 0; i < p4Arr.length; i++) {
+                    outscore += p4Arr[i];
+                    $('.player4-Ts').text(outscore);
+                }
+                for (let i = 0; i < p4totalAr.length; i++) {
+                    totalScore += p4totalAr[i];
+                    $('.player4-FS').text(totalScore);
+
+                }
+                break;
+            case 5:
+                osP1Arr.push(Number(value));
+                p1totalAr.push(Number(value));
+
+                for (let i = 0; i < osP1Arr.length; i++) {
+                    inscore += osP1Arr[i];
+                    $('.player1-os').text(inscore);
+
+
+                }
+                for (let i = 0; i < p1totalAr.length; i++) {
+                    totalScore += p1totalAr[i];
+                    $('.player1-FS').text(totalScore);
+                }
+                break;
+            case 6:
+                osP2Arr.push(Number(value));
+                p2totalAr.push(Number(value));
+
+                for (let i = 0; i < osP2Arr.length; i++) {
+                    inscore += osP2Arr[i];
+                    $('.player2-os').text(inscore);
+
+
+                }
+                for (let i = 0; i < p2totalAr.length; i++) {
+                    totalScore += p2totalAr[i];
+                    $('.player2-FS').text(totalScore);
+                }
+                break;
+            case 7:
+                osP3Arr.push(Number(value));
+                p3totalAr.push(Number(value));
+
+                for (let i = 0; i < osP3Arr.length; i++) {
+                    inscore += osP3Arr[i];
+                    $('.player3-os').text(inscore);
+
+
+                }
+                for (let i = 0; i < p3totalAr.length; i++) {
+                    totalScore += p3totalAr[i];
+                    $('.player3-FS').text(totalScore);
+
+                }
+
+                break;
+            case 8:
+                osP4Arr.push(Number(value));
+                p4totalAr.push(Number(value));
+
+                for (let i = 0; i < osP4Arr.length; i++) {
+                    inscore += osP4Arr[i];
+                    $('.player4-os').text(inscore);
+                }
+                for (let i = 0; i < p4totalAr.length; i++) {
+                    totalScore += p4totalAr[i];
+                    $('.player4-FS').text(totalScore);
+                }
+                break;
+            default:
+                console.log('how did you even do this?');
+                break;
+
+
+        }
+    }
+}
+
 
 function getCourseInfo(value) {
     let xhttp = new  XMLHttpRequest();
@@ -189,138 +328,6 @@ function getCourseInfo(value) {
 
 
 
-function calculateTotal(id, value) {
-    let outscore = 0;
-    let inscore = 0;
-    let totalScore = 0;
-    switch (id) {
-        case 1:
-            p1Arr.push(Number(value));
-            p1totalAr.push(Number(value));
-            for (let i = 0; i < p1Arr.length; i++) {
-                outscore += p1Arr[i];
-                $('.player1-Ts').text(outscore);
-
-            }
-            for (let i = 0; i < p1totalAr.length; i++) {
-                totalScore += p1totalAr[i];
-                $('.player1-FS').text(totalScore);
-
-            }
-            break;
-
-        case 2:
-            p2Arr.push(Number(value));
-            p2totalAr.push(Number(value));
-            for (let i = 0; i < p2Arr.length; i++) {
-                outscore += p2Arr[i];
-                $('.player2-Ts').text(outscore);
-            }
-            for (let i = 0; i < p2totalAr.length; i++) {
-                totalScore += p2totalAr[i];
-                $('.player2-FS').text(totalScore);
-            }
-            break;
-
-        case 3:
-            p3Arr.push(Number(value));
-            p3totalAr.push(Number(value));
-
-            for (let i = 0; i < p3Arr.length; i++) {
-                outscore += p3Arr[i];
-                $('.player3-Ts').text(outscore);
-            }
-            for (let i = 0; i < p3totalAr.length; i++) {
-                totalScore += p3totalAr[i];
-                $('.player3-FS').text(totalScore);
-
-            }
-            break;
-
-        case 4:
-            p4Arr.push(Number(value));
-            p4totalAr.push(Number(value));
-
-            for (let i = 0; i < p4Arr.length; i++) {
-                outscore += p4Arr[i];
-                $('.player4-Ts').text(outscore);
-            }
-            for (let i = 0; i < p4totalAr.length; i++) {
-                totalScore += p4totalAr[i];
-                $('.player4-FS').text(totalScore);
-
-            }
-            break;
-        case 5:
-            osP1Arr.push(Number(value));
-            p1totalAr.push(Number(value));
-
-            for (let i = 0; i < osP1Arr.length; i++) {
-                inscore += osP1Arr[i];
-                $('.player1-os').text(inscore);
-
-
-            }
-            for (let i = 0; i < p1totalAr.length; i++) {
-                totalScore += p1totalAr[i];
-                $('.player1-FS').text(totalScore);
-            }
-            break;
-        case 6:
-            osP2Arr.push(Number(value));
-            p2totalAr.push(Number(value));
-
-            for (let i = 0; i < osP2Arr.length; i++) {
-                inscore += osP2Arr[i];
-                $('.player2-os').text(inscore);
-
-
-            }
-            for (let i = 0; i < p2totalAr.length; i++) {
-                totalScore += p2totalAr[i];
-                $('.player2-FS').text(totalScore);
-            }
-            break;
-        case 7:
-            osP3Arr.push(Number(value));
-            p3totalAr.push(Number(value));
-
-            for (let i = 0; i < osP3Arr.length; i++) {
-                inscore += osP3Arr[i];
-                $('.player3-os').text(inscore);
-
-
-            }
-            for (let i = 0; i < p3totalAr.length; i++) {
-                totalScore += p3totalAr[i];
-                $('.player3-FS').text(totalScore);
-
-            }
-
-            break;
-        case 8:
-            osP4Arr.push(Number(value));
-            p4totalAr.push(Number(value));
-
-            for (let i = 0; i < osP4Arr.length; i++) {
-                inscore += osP4Arr[i];
-                $('.player4-os').text(inscore);
-            }
-            for (let i = 0; i < p4totalAr.length; i++) {
-                totalScore += p4totalAr[i];
-                $('.player4-FS').text(totalScore);
-            }
-            break;
-        default:
-            console.log('how did you even do this?');
-            break;
-
-
-    }
-
-
-
-}
 
 
 
