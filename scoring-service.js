@@ -27,7 +27,7 @@ function addPlayers() {
 
         // add players
         for (let i = 1; i <= numbPlayers; i++) {
-            $(".in-score").append(`<div class='score-container player${[i]}'><div class='player-container'>player${[i]}</div></div>`);
+            $(".in-score").append(`<div class='score-container player${[i]}'><div class='player-container' contenteditable="true">click to edit</div></div>`);
             $('.out-score').append(`<div class='os-score-container os-player${[i]}'></div>`)
         // adds the hole count at the top
         }
@@ -248,6 +248,7 @@ function calculateTotal(id, value) {
                     totalScore += p4totalAr[i];
                     $('.player4-FS').text(totalScore);
                 }
+
                 break;
             default:
                 console.log('how did you even do this?');
@@ -325,8 +326,6 @@ function getCourseInfo(value) {
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/"+ value , true );
     xhttp.send();
 }
-
-
 
 
 

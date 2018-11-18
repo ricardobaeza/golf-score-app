@@ -103,6 +103,8 @@ img {
     justify-content: center;
     background-color: #00a534;
 }
+
+
 .score-container {
     display: flex;
     width: 720px;
